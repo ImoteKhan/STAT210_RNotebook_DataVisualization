@@ -1,0 +1,46 @@
+---
+title: 'R Notebook: Data Visualization'
+output:
+  html_document:
+    df_print: paged
+name: Aaron Ale
+---
+
+#3 Data Visualisation
+
+##3.1 Intro
+
+using ggplot2 to visualize data in R
+implements grammer of graphics
+one system with many applications
+
+Read: http://vita.had.co.nz/papers/layered-grammar.pdf
+this will provide more indepth understanding
+
+###3.1.1 Prereqs
+
+tidyverse works with some packages and conflicts with others
+see this section for a detailed list
+
+ggplot::ggplot() tells yout explicity that ggplot() function is from the ggplot 2 package
+
+##3.2 to 3.7
+we looked over this example in class, see my class notes for better details.
+
+```{r}
+require(ggplot2)
+require(tidyverse)
+ggplot2::mpg
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth()
+
+ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
+```
+
+
+
+
+
